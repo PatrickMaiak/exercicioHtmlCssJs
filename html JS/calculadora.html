@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #container{
+            border-radius: 15px;
+            background-color: rgb(143, 89, 89);
+            margin: 5em 30% 0 30%;
+            width: 27em;
+            height: 24em;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            border-left: 5px solid black;
+            border-bottom: 5px solid black;
+        }
+
+        #tela{
+            background-color: rgb(205, 205, 205);
+            display: flex;
+            width: 91%;
+        }
+
+        #display{
+            background: rgb(255,255,255);               
+            background: linear-gradient(270deg, rgba(255, 255, 255, 0.498) 1%, rgb(230, 230, 230) 76%);
+            padding-left: 10%;
+            justify-content: center;
+            font-size: 2em;
+            width: 8.1em;
+            height: 2em;
+            border: 1px solid black;
+            border-right: 2.5px solid black;
+            border-top: 2.9px solid black;
+        }
+
+        #displayResultado{
+            background: rgb(255,255,255);
+            background: linear-gradient(270deg, rgba(255, 255, 255, 0.498) 1%, rgb(230, 230, 230) 76%);           
+            font-size: 2em;
+            width: 4.1em;
+            height: 2em;
+            border: 1px solid black;
+            border-right: 2.5px solid black;
+            border-top: 2.9px solid black;
+        }
+
+        #teclado{
+            
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        button{
+            border-radius: 4px;
+            background: rgb(255,255,255);
+            background: linear-gradient(0deg, rgba(255,255,255,1) 37%, rgba(200, 200, 200, 0.703) 57%);
+            font-family:sans-serif;
+            font-size: 3em;
+            width: 2em;
+            height: 1.5em;
+            margin: 2.5px;
+            box-shadow: -2px 2px 2px  black;
+        }
+        
+        button:hover{
+            transition: 0.2s;
+            font-family:sans-serif;
+            font-size: 3em;
+            width: 2em;
+            height: 1.5em;
+            margin: 2.5px;
+            box-shadow: -1px 1px 2px rgb(143, 89, 89);
+        }
+
+        #diferentão{
+            font-size: 1.5em;
+            width: 4em;
+            height: 3em;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="tela">
+            <input type="text" readonly id="display">
+            <input type="text" readonly id="displayResultado">
+        </div>
+
+        <div id="teclado">
+            <button onclick="digitar('1')">1</button>
+            <button onclick="digitar('2')">2</button>
+            <button onclick="digitar('3')">3</button>
+
+                <button onclick="salvarOperador('+'),SalvarNumero1()">+</button>
+
+            <button onclick="digitar('4')">4</button>
+            <button onclick="digitar('5')">5</button>
+            <button onclick="digitar('6')">6</button>  
+
+                <button onclick="salvarOperador('-'),SalvarNumero1()">-</button>
+
+            <button onclick="digitar('7')">7</button>
+            <button onclick="digitar('8')">8</button>
+            <button onclick="digitar('9')">9</button>
+
+                <button onclick="salvarOperador('X'),SalvarNumero1()">X</button>
+            
+                <button id="diferentão"onclick="salvarOperador('➗'),SalvarNumero1()">➗</button>
+            
+            <button onclick="digitar('0')">0</button>
+
+                <button onclick="SalvarNumero2(),mostrarResultado()">=</button>
+                <button onclick="clean()">C</button>
+        </div>
+
+    </div>
+    
+    <script>
+
+        var display = ""
+        var displayOculto = ""
+        var sinal = ""
+        var numero1 = 0
+        var numero2 = 0
+        var resultado = 0
+
+        function clean(){
+            display=""
+            displayOculto = ""
+            sinal = ""
+            numero1 = 0
+            numero2 = 0
+            resultado = 0
+            document.getElementById("display").value = display;
+            document.getElementById("displayResultado").value = display;
+
+        }
+
+        function digitar(numeroDoDigitar) {
+            displayOculto += numeroDoDigitar
+            display += numeroDoDigitar
+            document.getElementById("display").value = display;
+
+        }
+
+        var i = 0
+        function salvarOperador(operador){
+            sinal = operador  
+            display += operador
+            document.getElementById("display").value = display;  
+            let cor ="blue"
+            i++      
+            if(i>1){
+                document.getElementById("display").value = ("ERRO !! 404")
+                document.getElementById("displayResultado").value = ("press F5")
+                document.body.style.backgroundColor = cor;
+                i = 0
+            }
+                       
+        }
+
+       function SalvarNumero1(){
+            numero1 = parseFloat(displayOculto)
+            displayOculto = ""
+
+        }
+       function SalvarNumero2(){
+            numero2 = parseFloat(displayOculto)
+
+        }
+       
+       function mostrarResultado(){
+        switch (sinal) {
+                case '+':
+                    resultado = numero1+numero2
+                
+                break;
+                case '-':
+                    resultado = numero1-numero2
+                break;
+                case 'X':
+                    resultado = numero1*numero2
+                break;
+                case '➗':
+                    resultado = numero1/numero2
+                
+                break;
+                default:
+            }
+            document.getElementById("displayResultado").value = resultado;
+            
+            // console.log(numero1,sinal, numero2, resultado)
+        }
+
+    </script>
+</body>
+</html>

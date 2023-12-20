@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registar</title>
+</head>
+<body>
+    <div id="container">
+        <input type="text" placeholder="Usuario">
+        <input type="password" placeholder="Senha">
+        <input type="password" placeholder="Senha Novamente">
+        <button onclick="cadastrar()">Registar</button>
+        <a href="./login.html">ir para login</a>
+        
+    </div>
+    <script>
+    
+        var indice = 0
+        var Login = [           
+                {                   
+                    nome: "a",
+                    senha: "a"
+                }    
+            ]
+        function cadastrar() {
+            let user = document.getElementsByTagName('input')[0].value
+            let senha1 = document.getElementsByTagName('input')[1]
+            let senhaConfirmada = document.getElementsByTagName('input')[2].value
+
+            for (let i = 0; i < Login.length; i++) {    
+                 if(user != Login[i].nome){
+                    Login += [            
+                    {  
+                        nome: user,
+                        senha: senhaConfirmada
+                    }
+                ]
+                 }
+            }
+           
+            
+            
+            try{
+                let senha = document.getElementsByTagName('input')[1].value
+                let senhaConfirma = document.getElementsByTagName('input')[2].value
+                if (senha != senhaConfirma) {
+                    throw 'as senhas são diferentes'                    
+                }
+            }
+            catch(err){
+               
+                alert(err)
+                senhaConfirmada.value = ""
+                senha1.value = ""
+                senha1.focus()
+            }
+           
+           
+            for (let i = 0; i < Login.length; i++) {
+                 indice++
+                 localStorage.setItem('user'+[indice] ,JSON.stringify(Login))
+                
+            }
+           
+        }
+    </script>
+</body>
+</html>

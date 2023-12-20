@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>logar</title>
+</head>
+<body>
+    <div id="container">
+        <input type="text" placeholder="Usuario">
+        <input type="password" placeholder="Senha">
+        <button onclick="logar()">Logar</button>
+    
+        <a href="./cadsatar.html">Registar</a>
+        <p></p>
+    </div>
+    <script>
+
+        function logar() {
+            let userInput = document.getElementsByTagName('input')[0]
+            let senha1Input = document.getElementsByTagName('input')[1]
+
+            let user = document.getElementsByTagName('input')[0].value
+            let senha1 = document.getElementsByTagName('input')[1].value
+            let confimaUser = localStorage.getItem('user')
+            let userName = confimaUser[0]
+            alert (userName)
+            alert (confimaUser)
+            alert (confimaUser[0])
+            alert (confimaUser[1])
+            try{   
+                if (confimaUser[0] != user) {
+                    throw 'usuario não existe'                    
+                }
+                else if (confimaUser[2] != senha1) {
+                    throw 'senha incorreta'                    
+                }
+            }
+
+            catch(err){
+                alert(err)
+                if(err =='usuario não existe' ){
+                userInput.focus()
+                }
+                else{
+                senha1Input.focus()
+                }
+            }
+            localStorage.setItem(userLogado , confimaUser)
+
+            document.getElementsByTagName('p')[0].innerHTML = 'Logado com sucesso'
+                 
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #gatos img{
+            width: 300px;
+            height: 300px;
+        }
+
+        figure img{
+            width: 500px;
+            height: 500px;
+        }
+
+    </style>
+</head>
+<body>
+            <figure>
+                <img src="" alt="fotos de gato" width="300" height="300">
+                <figcaption><b>ID: </b> <span></span></figcaption>
+            </figure>
+    <!-- <button onclick="carregarGato()">Carregar</button> -->
+
+    <button onclick="carregarGatosEmLote()">Carregar muitos gatos</button>
+    <div id="gatos">
+        <!---->
+    </div>
+    <script>
+
+        function carregarGatosEmLote(){
+            fetch('https://api.thecatapi.com/v1/images/search?limit=10')
+            .then((dados) => dados.json())
+            .then((response)=> {
+                let imagens = ''
+                for(let i = 0; i < response.length; i++){
+                   imagens += `<img src='${response[i].url}' alt='${i}' />'`
+                }
+                document.getElementById('gatos').innerHTML = imagens                
+            })  
+        }  
+
+        function carregarGato(){
+            fetch('https://api.thecatapi.com/v1/images/search')
+            .then((dados) => dados.json())
+            .then((response)=> {                
+                document.getElementsByTagName('img')[0].src = response[0].url
+                document.getElementsByTagName('span')[0].innerHTML = response[0].id
+            })
+        }
+        //a cada tres segundo executa a função carrega gato
+        setInterval(carregarGato, 3000)
+    </script>
+</body>
+</html>

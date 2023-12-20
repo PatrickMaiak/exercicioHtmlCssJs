@@ -1,0 +1,38 @@
+document.write("<div id='container'>")
+document.write("<header>")
+document.write("<div id='logoo'>")
+document.write("<img src='./img/logo.jpg' alt='' id='logo'>")
+document.write("</div>")
+
+
+document.write("<h1 id='h1'>Bem vindo ao site</h1>")
+document.write("<div id='containericon'>")
+document.write("<img src='./img/menoicon.jpg' alt=''id='logoicon'>")
+document.write("<aside>")
+document.write("<div class='descri'>")
+document.write("<a href='./index.html' name='a'>Home</a>")
+document.write("<p id='descrição'>volte para o menu inicial</p>")
+document.write("</div>")
+document.write("<div class='descri'>")
+document.write("<a href='./teste.html' name='a'>Maioridade</a>")
+document.write("<p id='descrição'>descubra se é maior ou menor</p>")
+document.write("</div>")
+document.write("<div class='descri'>")
+document.write("<a href='./media.html' name='a'>Média</a>")
+document.write("<p id='descrição'>infome notas e calcule a média</p>")
+document.write("</div>")
+document.write("<div class='descri'>")
+document.write("<a href='./imc.html' name='a'>IMC</a>")
+document.write("<p id='descrição'>descubra seu imc</p>")
+document.write("</div>")
+document.write("<div class='descri'>")
+document.write("<a href='./aumento.html' name='a'>Aumento</a>")
+document.write("<p id='descrição'>calcule o seu aumento</p>")
+document.write("</div>")
+document.write("</aside>")
+document.write("</div>")
+document.write("</header> ")
+
+
+
+

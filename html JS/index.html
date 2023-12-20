@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <input type="text" readonly id="display" placeholder="">
+
+        <button onclick="mostrar('1')">1</button>
+        <button onclick="mostrar('2')">2</button>
+        <button onclick="mostrar('3')">3</button>
+
+        <button onclick="mostrarSinal(),mostrar('+'),operador('+')">+</button>
+        <button onclick="mostrarSinal(),mostrar('/'),operador('/')">/</button>
+        <button onclick="mostrarSinal(),mostrar('*'),operador('*')">*</button>
+        <button onclick="mostrarSinal(),mostrar('-'),operador('-')">-</button>
+        
+        <button onclick="mostrar2(),mostrarR()">=</button>
+        <button onclick="clean()">C</button>
+
+    </div>
+    <script>
+        // add numero
+        // ao mostar o operador matematico o numero 2 tem que ser chamado
+        // na função somar com outro numero
+        // e depois o igual ro resultado
+
+
+        var display = ""
+        var displayOculto = ""
+        var sinal = ""
+        var numero1 = 0
+        var numero2 = 0
+        
+        function operador(operador){
+            if (operador == "+") {
+                sinal = "+"
+            }
+            else if (operador == "-") {
+                sinal = "-"
+            }
+            else if (operador == "/") {
+                sinal = "/"
+            }
+            else if (operador == "*") {
+                sinal = "*"
+            }
+            
+        }
+
+        function mostrar(numero){
+            display += numero;
+            displayOculto += numero;
+            
+            document.getElementById("display").value = display;
+
+            console.log(numero2 ,numero1 ,display,displayOculto)
+        }
+
+        function clean(){
+            display = ""
+            numero1 = ""
+            numero2 = ""
+            document.getElementById("display").value = display;
+
+
+            console.log(numero2 ,numero1 ,display)
+        }
+
+        function mostrarR(){
+
+            if(sinal == "+"){
+            display = ""
+                let calculo = (numero1+numero2)
+                display =String (calculo)
+                document.getElementById("display").value = display;
+                display = ""
+                numero1 = ""
+                numero2 = ""
+                
+                console.log(numero2 ,numero1 ,display,calculo)
+                calculo = ""
+            }
+
+            else if(sinal == "-"){
+
+                display = ""
+                let calculo = (numero1-numero2)
+                display = calculo
+                alert(calculo)
+                document.getElementById("display").value = display;
+                display = ""
+                numero1 = ""
+                numero2 = ""
+                
+                console.log(numero2 ,numero1 ,display,calculo)
+                calculo = ""
+            }
+            else if(sinal == "/"){
+
+                display = ""
+                let calculo = (numero1/numero2)
+                display = calculo
+                document.getElementById("display").value = display;
+                display = ""
+                numero1 = ""
+                numero2 = ""
+                
+                console.log(numero2 ,numero1 ,display,calculo)
+                calculo = ""
+            }
+            else if(sinal == "*"){
+
+                display = ""
+                let calculo = (numero1*numero2)
+                display = calculo
+                document.getElementById("display").value = display;
+                display = ""
+                numero1 = ""
+                numero2 = ""
+                
+                console.log(numero2 ,numero1 ,display,calculo)
+                calculo = ""
+            }
+
+           
+        }
+
+        function mostrarSinal(){
+            displayOculto = ""
+            let n1 = parseInt(display)
+            numero1 = n1
+            
+            
+            console.log(numero2 ,numero1 ,display)
+        }
+        function mostrar2(){
+            
+            let n2 = parseInt(displayOculto)
+            numero2 = n2
+            
+            console.log(numero2 ,numero1 ,display,)
+        }
+
+        
+        
+        
+        
+    </script>
+</body>
+</html>

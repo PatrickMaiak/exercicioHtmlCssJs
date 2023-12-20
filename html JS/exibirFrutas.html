@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: flex;
+        }
+        input{
+            width: 9em;
+            height: 1.5em;
+            padding-left: 0.3em;
+            font-size: 2em;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 2em;
+        }
+        #salva,#visu{
+            margin: 2em;
+            width: 6em;
+            height: 1.5em;
+            padding-left: 0.3em;
+            font-size: 2em;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            margin-top: -2em;
+            display: flex;
+            flex-direction: column;
+            margin-left: 1.97em;
+            width: 6em; 
+            padding: 1px;
+            font-size: 2em;
+            border: 1px solid black;
+            border-radius: 5px;
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+             min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content button {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            height: 4em;
+            width: 100%;
+        }
+
+        .dropdown-content button:hover {
+            background-color: #ddd;
+        }
+
+        #mostrar{
+            margin: 2em;
+            padding-left: 2em;
+            padding-bottom: 2em;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.5em;
+            border: 1px solid black;
+            
+        }
+         
+
+       
+    </style>
+</head>
+<body>
+   <!-- O usuário deve ter a opção de escolher como deve visualizar os dados:
+        parágrafo, lista ou tabela. -->
+    <div id="container">
+        <input type="text" placeholder="informe frutas" id="fruta">
+        <button onclick="salvar()" id="salva">salvar</button>
+        <div class="dropdown">
+            <button id="visu">Visualizar</button>
+            <div class="dropdown-content">
+                <button id="paragrafo" onclick="layout('1')">paragrafo</button>
+                <button id="lista" onclick="layout('2')">lista</button>
+                <button id="tabela" onclick="layout('3')">tabela</button>
+            </div>
+        </div>
+    </div>
+        
+        <div id="mostrar">
+           
+        </div>
+
+        <script>
+            var frutas = []
+            
+            function salvar(){
+                let inputfruta = document.getElementById("fruta")
+                
+                frutas.push(inputfruta.value)
+                inputfruta.value = ""
+                inputfruta.focus()
+            }
+          
+            function layout(value){
+                var mostrarDiv = document.getElementById('mostrar');
+
+            switch (value) {
+                case "1":
+                    mostrarDiv.innerHTML = `<p> ${frutas} </p>`;
+                    break;
+
+                case "2":
+                    mostrarDiv.innerHTML = '<ul>';
+                    for (var i = 0; i < frutas.length; i++) {
+                        mostrarDiv.innerHTML += '<li>' + frutas[i] + '</li>';    
+                    }
+                    mostrarDiv.innerHTML += '</ul>';
+                    break;
+
+                case "3":
+                    mostrarDiv.innerHTML = '<table><tr><th>Fruta</th></tr>';
+                     for (var i = 0; i < frutas.length; i++) {
+                        mostrarDiv.innerHTML += '<tr><td>' + frutas[i] + '</td></tr>';
+                    }
+                    mostrarDiv.innerHTML += '</table>';
+                        break;
+
+                default:
+                    mostrarDiv.innerHTML = "vazio";
+                    break;
+
+                }
+
+            }
+           
+        </script>
+
+</body>
+</html>

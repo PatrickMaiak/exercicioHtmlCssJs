@@ -1,0 +1,292 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    overflow:hidden;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    justify-content: space-between;
+    background-color: rgb(0, 0, 0);
+    height: 5em;
+}
+#logo{
+    
+    width: 100px;
+    height: 80px;
+}
+#containericon{
+    padding: 15px;
+}
+#logoo{
+    position: absolute;
+    z-index: 4;
+}
+#logoicon{
+    z-index: 2;
+    
+    margin: auto;
+    margin-right: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+#containericon:hover aside{
+    display: block;
+    animation: 
+    lateralizando 0.5s
+    
+    
+}
+
+@keyframes lateralizando{
+    0%{
+        margin-left: 5em;
+    }
+    100%{
+        margin-left: -11em;
+    }
+}
+
+aside{
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0px 30px 5px;
+    display: none;
+    padding-left: 1em;
+    margin-top: 0em;
+    margin-left: -11em; 
+    
+    width: 14em;
+    height: 25em;
+    border-radius: 5px;
+    border: 2px solid black;
+    box-shadow: -10px 15px 8px black;
+    
+    position: absolute;
+    background-color: rgb(239, 241, 243);
+}
+
+a[name="a"]{
+    cursor: default;
+    font-size: 2em;
+    text-decoration: none;
+    
+    
+}
+
+#descrição{
+    text-align: center;
+    display: none;
+}
+.descri{
+    margin-top: 1em;
+    width: max-content;
+}
+.descri:hover #descrição{
+    display: block;
+    
+    border-bottom: 1px solid blue;
+}
+
+h1 {
+    font-family: fantasy;
+    font-size: 4em;
+    white-space: nowrap;   
+    color: white;
+    position: relative;
+    overflow: hidden;
+    border-right: .15em solid rgb(255, 255, 255);
+    z-index: 1;
+    margin: 0 auto; 
+    margin-left: 25%;
+    letter-spacing: .1em; 
+    animation: 
+    digitando 5.5s infinite ,
+    piscaborda .75s step-end infinite;
+}
+
+
+@keyframes digitando {
+    0% { 
+        width: 0 ;          
+    }
+    
+    50%{
+        width: 580px;
+        border-color: rgba(255, 166, 0, 0);
+        animation-play-state: paused;
+        
+    }
+    100%{
+        width: 580px;
+        
+        border-color: rgba(255, 166, 0, 0);
+        
+        animation-play-state: paused;
+        
+    }
+}
+
+@keyframes piscaborda {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(255, 252, 252); }
+
+} 
+
+
+main{
+    border: 1px solid black;
+    height: 80vh;
+    background: rgb(107,22,153);
+    background: linear-gradient(347deg, rgba(107,22,153,1) 39%, rgba(59,0,255,1) 100%);
+}
+#page{
+    margin-left: 33%;
+    margin-top: 5%;
+} 
+footer{
+    padding: auto;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around ;
+
+    margin-left: 2px;
+
+    border: 1px solid black;
+}
+#containerfooter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer img{
+    width: 30px;
+    height: 30px;
+}
+.footer img:hover{
+
+    box-shadow: -2px 2px 5px blue;           
+}
+button{
+    margin: 30px 180px;
+    color: aliceblue;
+    width: 5em;
+    height: 2em;
+    border-radius: 15px;
+    background-color: rgb(85, 0, 85);
+}
+input{
+    margin-right: 280px;
+    padding-left: 4em;
+    font-size: larger;
+    border-radius: 10px;
+    width: 24em;
+    height: 2em;
+}
+@media screen and (max-width: 1100px ) {
+    
+    h1 {
+        font-family: fantasy;
+        font-size: 2.4em;
+        white-space: nowrap;   
+        color: white;
+        position: relative;
+        overflow: hidden;
+        border-right: .15em solid rgb(255, 255, 255);
+        z-index: 1;
+        margin: 0 auto; 
+        margin-left: 25%;
+        letter-spacing: .1em; 
+        animation: 
+        digitando 5.5s infinite ,
+        piscaborda .75s step-end infinite;
+    }
+    main{
+        border: 1px solid black;
+        height: 80vh;
+        background: rgb(107,22,153);
+        background: linear-gradient(347deg, rgba(107,22,153,1) 39%, rgba(59,0,255,1) 100%);
+    }
+    input{
+        padding-left: 4em;
+        font-size: larger;
+        border-radius: 10px;
+        width: 14em;
+        height: 2em;
+    }
+
+    
+    #page{
+        margin-left: 13%;
+        margin-top: 5%;
+    } 
+    button{
+        margin: 30px 180px;
+        color: aliceblue;
+        width: 5em;
+        height: 2em;
+        border-radius: 15px;
+        background-color: rgb(85, 0, 85);
+    }
+    footer{
+        padding: 5px 35em 5px 30em;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around ;
+    
+        margin-left: 2px;
+    
+        border: 1px solid black;
+    }
+    
+    .footer img{
+        width: 30px;
+        height: 30px;
+    }
+    .footer img:hover{
+    
+        box-shadow: -2px 2px 5px blue;           
+    }
+}
+@media screen and (max-width: 640px ) {
+    h1 {
+        font-family: fantasy;
+        font-size: 1.8em;
+        white-space: nowrap;   
+        color: white;
+        position: relative;
+        overflow: hidden;
+        border-right: .15em solid rgb(255, 255, 255);
+        z-index: 1;
+        margin: 0 auto; 
+        margin-left: 20%;
+        letter-spacing: .1em; 
+        animation: 
+        digitando 5.5s infinite ,
+        piscaborda .75s step-end infinite;
+    }  
+    main{
+        border: 1px solid black;
+        height: 80vh;
+        background: rgb(107,22,153);
+        background: linear-gradient(347deg, rgba(107,22,153,1) 39%, rgba(59,0,255,1) 100%);
+        
+    }
+    #page{
+        margin-left: 5%;
+        margin-top: 5%;
+    }
+    input{
+        padding-left: 4em;
+        font-size: larger;
+        border-radius: 10px;
+        width: 16em;
+        height: 2em;
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        #page{
+            margin-left: 33%;
+            margin-top: 5%;
+
+        } 
+        button{
+            color: aliceblue;
+            width: 5em;
+            height: 2em;
+            border-radius: 15px;
+            background-color: rgb(85, 0, 85);
+        }
+        input{
+            padding-left: 4em;
+            font-size: larger;
+            border-radius: 10px;
+            width: 20em;
+            height: 2em;
+        }
+        #titulo{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: xx-large;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <script src="index.js"></script>
+    
+    <main>
+        <div id="page">
+            <h2 id="titulo"> Informe seu cargo </h2>
+            <p>gerente / supervisores / operadores / demais colaboradores</p>
+                <input type="text" id="cargo" placeholder="INFORME CARGO" onblur="trocaSinal(this)"/>
+            <h2 id="titulo"> Informe seu salario   </h2>
+                <input type="text" id="salario" placeholder="INFORME SEU SALARIO" onblur="trocaSinal(this)"/>
+                    <button onclick="calcularaumento()">===</button>
+
+            <p id="resultadomedia"></p>
+            <p id="resultadoSITU"></p>
+
+            
+            <script src="script.js"></script>
+        </div>
+    </main>
+
+    <script src="index2.js"></script>
+</body>
+</html>

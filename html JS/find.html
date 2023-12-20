@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <input type="number" placeholder="informe numero">
+    <button onclick="salvar()">salvar</button>
+    <button onclick="procurar()">find</button>
+    <p></p>
+    <p></p>
+
+    <script>
+        var array =[1,2,3,5,7,11,9,19] 
+
+        function igual(array) {
+            return array == document.getElementsByTagName('input')[0].value
+        }
+        function salvar(numero) {
+            alert(numero)
+            array.push(numero)
+            
+        }
+
+        function procurar() {
+           
+            let temIgual = document.getElementsByTagName("p")[0].innerHTML  = array.find(igual)
+            document.getElementsByTagName("p")[1].innerHTML  = array
+           
+            
+            if (isNaN(temIgual)) {
+                salvar(temIgual)
+               
+                alert(array)
+            }
+            
+        }
+       
+    </script>
+</body>
+</html>
