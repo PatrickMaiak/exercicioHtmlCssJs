@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ORM.Models.Compromisso>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table" style="border:1px solid black">
+    <thead>
+        <tr style="background-color:#00000050; border-bottom:1px solid black">
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Local)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr style="background-color:#1a19191e;">
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Data)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contato.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Local.Rua)
+            </td>
+            <td>
+                <button style="border-radius:5px; background-color:blue; padding: auto;"><a asp-action="Edit" asp-route-id="@item.Id" style="text-decoration:none; color:whitesmoke">Edit</a> </button> |
+                <button style="border-radius:5px; background-color:greenyellow; padding: auto; "><a asp-action="Details" asp-route-id="@item.Id" style="text-decoration:none;color:purple">Details</a></button> |
+                <button style="border-radius:5px; background-color:red; padding: auto; "><a asp-action="Delete" asp-route-id="@item.Id" style="text-decoration:none;color:whitesmoke">Delete</a></button>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
