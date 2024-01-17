@@ -30,20 +30,10 @@ namespace CrudDeProduto.Controllers
         }
 
 
-        //[HttpGet("Lista de produtos da categoria{Id}")]
-        //public async Task<ActionResult<IEnumerable<Categoria>>> GetProdutosDaCaegoria(int Id)
-        //{
-        //    List<TodoProduto> todoProdutos = new List<TodoProduto>();
-
-        //    todoProdutos = await _context.TodoProduto.ToListAsync();
-            
 
 
-        //    return await _context.Categoria.ToListAsync();
-        //}
-
-        [HttpGet("Lista de produtos da categoria{Id}")]
-        public async Task<ActionResult<Categoria>> GetProdutosDaCategoria(int Id)
+        [HttpGet("api/[controller]/categoria{Id}")]
+        public async Task<ActionResult<IEnumerable<TodoProduto>>> GetProdutosDaCategoria(int Id)
         {
             List<TodoProduto> todoProdutos = new List<TodoProduto>();
 
@@ -54,27 +44,18 @@ namespace CrudDeProduto.Controllers
 
             var categoria = await _context.Categoria.FindAsync(Id);
 
-           
+
 
             if (categoria == null)
             {
                 return NotFound();
             }
-            else if (categoria.Id == Id) 
-            {
-                return todoProdutos.FirstOrDefault(c => c.CategoriaId == Id)
-            
-            }
 
-            foreach (var todo in todoProdutos)
-            {
-                if (todo.Id == Id) { prodcategoria == todo.Produto }
-            }
 
-            return prodcategoria;
+            return todoProdutos;
         }
 
-        
+
         // GET: api/Categorias/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Categoria>> GetCategoria(int id)

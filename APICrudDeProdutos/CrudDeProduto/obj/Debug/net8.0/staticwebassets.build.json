@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "qRfPQ50xKcvQ9fbqiQc4NRxF4x4MdlZmCtwaS9lKwTY=",
+  "Hash": "oO0U40ycZG5CEKeunwC/GJQ5mu6bf/shjagOVh4Uc8c=",
   "Source": "CrudDeProduto",
   "BasePath": "_content/CrudDeProduto",
   "Mode": "Default",
@@ -47,10 +47,10 @@
       "OriginalItemSpec": "C:\\Users\\patrick.kremer\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.0\\staticwebassets\\QuickGrid.razor.js"
     },
     {
-      "Identity": "C:\\Users\\patrick.kremer\\source\\repos\\CrudDeProduto\\CrudDeProduto\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CrudDeProduto.styles.css",
+      "Identity": "C:\\Users\\patrick.kremer\\Desktop\\repositorio\\APICrudDeProdutos\\CrudDeProduto\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CrudDeProduto.styles.css",
       "SourceId": "CrudDeProduto",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\patrick.kremer\\source\\repos\\CrudDeProduto\\CrudDeProduto\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\patrick.kremer\\Desktop\\repositorio\\APICrudDeProdutos\\CrudDeProduto\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/CrudDeProduto",
       "RelativePath": "CrudDeProduto.styles.css",
       "AssetKind": "All",
@@ -63,7 +63,7 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\patrick.kremer\\source\\repos\\CrudDeProduto\\CrudDeProduto\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CrudDeProduto.styles.css"
+      "OriginalItemSpec": "C:\\Users\\patrick.kremer\\Desktop\\repositorio\\APICrudDeProdutos\\CrudDeProduto\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CrudDeProduto.styles.css"
     }
   ]
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "X2fzEDR6LhLPWXem7/wkqDTBEoAwOby909Af26R6B/5S+ym4NjBQAENDC0CIX54042bgpA+/F6+KE+QvJso04Q==",
+  "dgSpecHash": "Y0JEBAJ61oNqlOVH2MWyAlRJlR8cxlfhWHTaDV4aEI4wdh+Azh802hierP6hM9c42htvC/TRGQOdhkSR95vLMA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\patrick.kremer\\source\\repos\\CrudDeProduto\\CrudDeProduto\\CrudDeProduto.csproj",
+  "projectFilePath": "C:\\Users\\patrick.kremer\\Desktop\\repositorio\\APICrudDeProdutos\\CrudDeProduto\\CrudDeProduto.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\patrick.kremer\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\patrick.kremer\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

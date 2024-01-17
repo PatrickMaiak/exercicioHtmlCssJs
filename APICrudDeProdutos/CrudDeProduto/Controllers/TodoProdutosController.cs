@@ -53,6 +53,52 @@ namespace CrudDeProduto.Controllers
             return todoProduto;
         }
 
+        [HttpGet("api/[controller]/categoria{id}")]
+        public async Task<ActionResult<IEnumerable<TodoProduto>>> GetProdutosDaCategoria(int id)
+        {
+            List<TodoProduto> todoProdutos = await _context.TodoProduto.ToListAsync();
+
+            var Prod = (from todoProduto in todoProdutos where todoProduto.CategoriaId == id select todoProduto).ToList();
+
+           
+            Categoria categoria = await _context.Categoria.FirstOrDefaultAsync(categoria => categoria.Id == id);
+
+            foreach (var todoProduto in Prod)
+            {
+                todoProduto.Categoria = categoria;
+            }
+           
+            return Prod;
+        }
+
+        [HttpGet("pages")]
+        public async Task<ActionResult<IEnumerable<TodoProduto>>> GetPageProdutos(
+             [FromQuery] int numeroDePaginas = 0,
+             [FromQuery] int tamanhoDaPagina = 2
+            )
+        {
+            List<TodoProduto> produto = await _context.TodoProduto.AsNoTracking().Skip(numeroDePaginas * tamanhoDaPagina).Take(tamanhoDaPagina).ToListAsync();
+            return produto;
+        }
+
+
+        //api/produtos/descricao?nome=cola
+        [HttpGet("/api/[controller]/descricao")]
+        public async Task<ActionResult<IEnumerable<TodoProduto>>> GetNameTodoProduto([FromQuery]string nome)
+        {
+            List<TodoProduto> produtobyname = await _context.TodoProduto.ToListAsync();
+
+            var todoProdutos = (from prod in produtobyname where prod.Produto.ToLower().Contains(nome.ToLower()) select prod).ToList();
+
+            foreach (var produto in todoProdutos)
+            {
+                produto.Categoria = await _context.Categoria.FirstOrDefaultAsync(c => c.Id == produto.CategoriaId);
+            }
+           
+            return todoProdutos;
+        }
+
+
         // PUT: api/TodoProdutos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
