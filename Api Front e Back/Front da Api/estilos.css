@@ -1,0 +1,22 @@
+#Titulo{
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#Container{
+    display: flex;
+    justify-content: space-around;
+}
+table, th, td{
+    border: 1px solid black;
+}
+form{
+    display: flex;
+    flex-direction: column;
+}
+#content-table{
+    display: flex;
+    flex-direction: column;
+    
+}
