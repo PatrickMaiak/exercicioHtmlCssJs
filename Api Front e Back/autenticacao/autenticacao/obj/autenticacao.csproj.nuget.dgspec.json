@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\patrick.kremer\\source\\repos\\autenticacao\\autenticacao\\autenticacao.csproj": {}
+    "C:\\Users\\patrick.kremer\\Desktop\\tabela\\Api Front e Back\\autenticacao\\autenticacao\\autenticacao.csproj": {}
   },
   "projects": {
-    "C:\\Users\\patrick.kremer\\source\\repos\\autenticacao\\autenticacao\\autenticacao.csproj": {
+    "C:\\Users\\patrick.kremer\\Desktop\\tabela\\Api Front e Back\\autenticacao\\autenticacao\\autenticacao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\patrick.kremer\\source\\repos\\autenticacao\\autenticacao\\autenticacao.csproj",
+        "projectUniqueName": "C:\\Users\\patrick.kremer\\Desktop\\tabela\\Api Front e Back\\autenticacao\\autenticacao\\autenticacao.csproj",
         "projectName": "autenticacao",
-        "projectPath": "C:\\Users\\patrick.kremer\\source\\repos\\autenticacao\\autenticacao\\autenticacao.csproj",
+        "projectPath": "C:\\Users\\patrick.kremer\\Desktop\\tabela\\Api Front e Back\\autenticacao\\autenticacao\\autenticacao.csproj",
         "packagesPath": "C:\\Users\\patrick.kremer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\patrick.kremer\\source\\repos\\autenticacao\\autenticacao\\obj\\",
+        "outputPath": "C:\\Users\\patrick.kremer\\Desktop\\tabela\\Api Front e Back\\autenticacao\\autenticacao\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\patrick.kremer\\AppData\\Roaming\\NuGet\\NuGet.Config",
