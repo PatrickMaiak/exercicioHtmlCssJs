@@ -56,7 +56,7 @@ namespace CrudDeProduto.Controllers
         }
 
 
-        // GET: api/Categorias/5
+        // GET: api/Categorias/5s
         [HttpGet("{id}")]
         public async Task<ActionResult<Categoria>> GetCategoria(int id)
         {

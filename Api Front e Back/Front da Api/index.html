@@ -15,58 +15,59 @@
    
 <div id="Container">
 
-<div>
-    <div id="content-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Categoria</th>
-                    <th>Botao</th>
+    <div>
+        <div id="content-table">
+            <table class="tabela-colorida">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Categoria</th>
+                        <th id="botaotabela">Botao</th>
+                
+                    </tr>
+                </thead>
             
-                </tr>
-            </thead>
-        
-            <tbody>
-        
-            </tbody>
-        </table>
-        
-        <button onclick="GetCategoria()">carregar</button>
-    </div>
+                <tbody id="CategoriaTb">
+            
+                </tbody>
+            </table>
+            
+            <button onclick="GetCategoria()">carregar</button>
+        </div>
         <form>
-            <input id="categoriaInput" type="text" placeholder="CATEGORIA">
-    
-            <button onclick="Post()">Postar</button>
+            <input id="categoriaInput" type="text" placeholder="CATEGORIA">   
+            <button onclick="PostCategoria()">Postar</button>
         </form>
+                
+    </div>  
+
+    <div>
+        <div id="content-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Produto</th>
+                        <th>Valor</th>
+                        <th>Categoria</th>
+                        <th id="botaotabela">Botao</th>
+                <tbody>
+
+                </tbody>
+            </table>
+
+            <button onclick="GetProduto()">carregar</button>
+        </div>
         
-    
-      
-</div>    
-<div>
-    <div id="content-table">
-        <table>
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Produto</th>
-                    <th>Valor</th>
-                    <th>Categoria</th>
+        <form>
+            <input id="ProdutoInput" type="text" placeholder="PRODUTO">
+            <input id="ValorProdutoInput" type="text" placeholder="VALOR">
+            <input id="ProdutoCategoriaInput" type="text" placeholder="CATEGORIA">
+            <button onclick="PostProduto()">Postar</button>
+        </form>
+            
 
-            </tbody>
-        </table>
-
-        <button onclick="GetProduto()">carregar</button>
     </div>
-    <form>
-        <input id="categoriaInput1" type="text" placeholder="PRODUTO">
-        <input id="categoriaInput2" type="text" placeholder="VALOR">
-        <input id="categoriaInput3" type="text" placeholder="CATEGORIA">
-        <button onclick="PostProduto()">Postar</button>
-    </form>
-        
-
-</div>
 </div>
 </body>
 </html>

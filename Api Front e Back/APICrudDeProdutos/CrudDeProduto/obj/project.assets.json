@@ -7085,19 +7085,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\patrick.kremer\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\patrick.kremer\\Desktop\\repositorio\\APICrudDeProdutos\\CrudDeProduto\\CrudDeProduto.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Desktop\\API\\Api Front e Back\\APICrudDeProdutos\\CrudDeProduto\\CrudDeProduto.csproj",
       "projectName": "CrudDeProduto",
-      "projectPath": "C:\\Users\\patrick.kremer\\Desktop\\repositorio\\APICrudDeProdutos\\CrudDeProduto\\CrudDeProduto.csproj",
-      "packagesPath": "C:\\Users\\patrick.kremer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\patrick.kremer\\Desktop\\repositorio\\APICrudDeProdutos\\CrudDeProduto\\obj\\",
+      "projectPath": "C:\\Users\\User\\Desktop\\API\\Api Front e Back\\APICrudDeProdutos\\CrudDeProduto\\CrudDeProduto.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Desktop\\API\\Api Front e Back\\APICrudDeProdutos\\CrudDeProduto\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\patrick.kremer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
