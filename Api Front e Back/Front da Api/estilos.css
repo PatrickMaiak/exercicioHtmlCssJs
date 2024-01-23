@@ -9,7 +9,7 @@ body{
     background-color: rgb(0, 0, 106);
 }
 #Container{   
-    display: none;
+    
     display: flex;
     justify-content: space-around;
 }

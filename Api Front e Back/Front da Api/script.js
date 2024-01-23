@@ -1,5 +1,27 @@
-// GetCategoria();
-// GetProduto();
+
+async function Login() {
+    let loginUsername = document.getElementById('username').value;
+    let loginPassword = document.getElementById('password').value;
+    let objUserDto = {
+        username: loginUsername,
+        password: loginPassword
+    }
+    await fetch('https://localhost:7291/api/Users/login',
+    {
+        method:"post",
+        headers:{'Content-Type': 'application/json'},
+        body: JSON.stringify(objUserDto)
+    })
+    .then(data => data.json())
+    .then(response =>
+
+        
+        localStorage.setItem("token", response.token)
+    
+    )
+}
+
+
 
 async function GetCategoria() {
     
@@ -7,7 +29,18 @@ async function GetCategoria() {
     tabela = document.getElementById('CategoriaTb')
     tabela.innerHTML = ''
     
-    await fetch('https://localhost:7291/api/Categorias')
+    const token = localStorage.getItem('token');
+    console.log(token)
+    await fetch('https://localhost:7291/api/Categorias',
+    {
+        method:"get",
+        headers:{'Authorization': 'Bearer ' + token,
+                 'Content-Type': 'application/json'
+                },
+        body: JSON.stringify(objCategoria)
+    }
+    
+    )
     .then(data => data.json())
     .then(response => {
       response.forEach(item => {
@@ -52,16 +85,19 @@ async function PostCategoria() {
     let objCategoria = {
         descricao: categoriaInputValor
     }
+    const token = localStorage.getItem('token');
     await fetch('https://localhost:7291/api/Categorias',
     {
         method:"post",
-        headers:{'Content-Type': 'application/json'},
+        headers:{'Authorization': 'Bearer ' + token,
+                 'Content-Type': 'application/json'
+                },
         body: JSON.stringify(objCategoria)
     }
     
     )
    
-    GetCategoria();
+   // GetCategoria();
     
 }
 
@@ -89,7 +125,6 @@ async function PostProduto() {
     
     )
     GetProduto();
-    alert(objProduto)
     
 }
 
@@ -114,29 +149,3 @@ async function PostProduto() {
 
 
 
-// fetch('https://ubahthebuilder.tech/posts/1')
-// .then(data => {
-// return data.json();
-// })
-// .then(post => {
-// console.log(post.title);
-// });
-
-// async function fetchProducts() {
-//     try {
-//         const response = await fetch('https://localhost:7291/api/Categorias');
-//         const produtos = await response.json();
-
-       
-//         const productsString = JSON.stringify(produtos, null, 2);
-
-        
-//         const productInfo = document.getElementById('product-info');
-//         productInfo.textContent = productsString;
-//     } catch (error) {
-//         console.error('Erro ao buscar produtos:', error);
-//     }
-// }
-
-// // Chama a função ao carregar a página
-// fetchProducts();

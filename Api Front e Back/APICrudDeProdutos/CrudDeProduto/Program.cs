@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 
 using CrudDeProduto.Data;
 using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 
@@ -63,6 +65,8 @@ app.UseHttpsRedirection();
 app.UseRouting();
 
 app.UseCors(MyAllowSpecificOrigins);
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

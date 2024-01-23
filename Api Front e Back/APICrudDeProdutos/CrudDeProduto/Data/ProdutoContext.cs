@@ -13,5 +13,6 @@ namespace CrudDeProduto.Data
 
         public DbSet<TodoProduto> TodoProduto { get; set; } = null!;
         public DbSet<Categoria> Categoria { get; set; } = null!;
+        public DbSet<CrudDeProduto.Models.User> User { get; set; } = default!;
     }
 }

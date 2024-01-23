@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
+using CrudDeProduto.Models;
 namespace CrudDeProduto.Data
 {
     public class AuthContext : DbContext
@@ -8,6 +8,6 @@ namespace CrudDeProduto.Data
         {
         }
 
-        public DbSet<CrudDeProduto.Models.User> Users { get; set; }
+        public DbSet<User> User { get; set; }
     }
 }
