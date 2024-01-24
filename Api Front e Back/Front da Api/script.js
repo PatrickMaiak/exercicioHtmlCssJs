@@ -27,6 +27,7 @@ async function GetCategoria() {
     
     linha = ''
     tabela = document.getElementById('CategoriaTb')
+    linha = document.createElement('tr')
     tabela.innerHTML = ''
     
     const token = localStorage.getItem('token');
@@ -44,11 +45,41 @@ async function GetCategoria() {
     .then(data => data.json())
     .then(response => {
       response.forEach(item => {
-            linha = `<tr><td class="bloco">${item.id}</td><td>${item.descricao}</td>
-            <td id="botaotabela"><button onclick=""><img width="15" height="15" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/></button>
-            <button onclick=""><img width="15" height="15" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/></button>
-            <button onclick=""><img width="15" height="15" src="https://img.icons8.com/ios-glyphs/30/apple-notes.png" alt="apple-notes"/></button></td></tr>`
-            tabela.innerHTML += linha;
+            linha = document.createElement('tr')
+           
+            var colunaId = document.createElement('td')
+            colunaId.classList.add('bloco')
+            colunaId.textContent = `${item.id}`
+            linha.appendChild(colunaId)
+
+            
+            var colunaDescricao = document.createElement('td')
+            colunaDescricao.textContent = `${item.descricao}`
+            linha.appendChild(colunaDescricao)
+
+            var colunaFuncoes = document.createElement('td')
+            var button = document.createElement('button')
+            button.onclick = deleteCategoria
+
+            var icon = document.createElement('img')
+            img.src = 'https://img.icons8.com/material-outlined/24/filled-trash.png'
+            img.width = 15
+            img.height = 15
+            img.alt = 'Delete'
+
+            button.appendChild(icon)
+            colunaFuncoes.appendChild(button)
+            linha.appendChild(colunaFuncoes)
+
+            // linha = `<tr><td class="bloco">${item.id}</td><td>${item.descricao}</td>
+            // <td id="botaotabela"><button onclick=""><img width="15" height="15" src="https://img.icons8.com/material-outlined/24/filled-trash.png" alt="filled-trash"/></button>
+            // <button onclick=""><img width="15" height="15" src="https://img.icons8.com/ios/50/edit--v1.png" alt="edit--v1"/></button>
+            // <button onclick=""><img width="15" height="15" src="https://img.icons8.com/ios-glyphs/30/apple-notes.png" alt="apple-notes"/></button></td></tr>`
+            // tabela.innerHTML += linha;
+
+
+
+
             console.log(item.descricao);
             console.log(item.id);
         });
