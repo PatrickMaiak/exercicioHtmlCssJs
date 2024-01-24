@@ -20,8 +20,19 @@
     <input id="password" type="text" placeholder="PASSWORD" >
     <button onclick="Login()">LOGIN</button>
 </div>
-<div>
+
+<div class="SumirCadastro"  id="cadastro">
     <h1>Cadastro</h1>
+    <input id="username" type="text" placeholder="USERNAME" >
+    <input id="password" type="text" placeholder="PASSWORD" >
+    <select id="role" type="" placeholder="ROLE" >
+        <option value=""></option>
+        <option value="funcionario">funcionario</option>
+        <option value="gerente">gerente</option>
+        <option value="admin">admin</option>
+        <option value="root">root</option>
+    </select>
+    <button onclick="Cadastro()">Cadastrar</button>
 </div>
 </div>
 
@@ -46,6 +57,16 @@
             
             <button onclick="GetCategoria()">carregar</button>
         </div>
+        
+        <div class="SumirEdit" id="edit">
+            <h2>EDITE AQUI</h2>
+            <input id="categoriaInputID" disabled="true" >
+            <input id="categoriaInputDESCRICAO">
+           
+            <button onclick="editCategoria()">Editar</button>
+        </div>
+
+
         <form>
             <input id="categoriaInput" type="text" placeholder="CATEGORIA">   
             <button onclick="PostCategoria()">Postar</button>

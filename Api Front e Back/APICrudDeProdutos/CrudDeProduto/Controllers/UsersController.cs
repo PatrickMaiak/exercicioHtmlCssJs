@@ -27,7 +27,7 @@ namespace CrudDeProduto.Controllers
 
         // GET: api/Users
         [HttpGet]
-        //[Authorize(Roles = "admin, gerente")]
+        //[Authorize(Roles = "admin, gerente,root")]
         public async Task<ActionResult<IEnumerable<User>>> GetUser()
         {
             return await _context.User.ToListAsync();
@@ -81,7 +81,7 @@ namespace CrudDeProduto.Controllers
         // POST: api/Users
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        //[Authorize(Roles = "admin, gerente")]
+        //[Authorize(Roles = "admin, gerente, root")]
         public async Task<ActionResult<User>> PostUser(User user)
         {
             _context.User.Add(user);
@@ -111,7 +111,7 @@ namespace CrudDeProduto.Controllers
         // DELETE: api/Users/5
 
         [HttpDelete("{id}")]
-        //[Authorize (Roles ="admin, gerente")]
+        //[Authorize (Roles ="admin, gerente, root")]
         public async Task<IActionResult> DeleteUser(int id)
         {
             var user = await _context.User.FindAsync(id);

@@ -4,9 +4,38 @@
     align-items: center;
     text-align: center;
 }
+.SumirEdit{
+    display: none;
+}
+.AparecerCadastro{
+    display: block;
+}
+.SumirCadastro{
+    display: none;
+}
+.AparecerEdit{
+    text-shadow: -2px 3px 1px rgb(0, 0, 0);
+    text-align: center;
+    border: 1px solid black;
+    box-shadow: -10px 10px 10px black ;
+    border-radius: 15px;
+    padding: 1em;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    top: 45em;
+    left: 9em;
+    display: block;
+    background-color: rgba(137, 43, 226, 0.651);
+    color: rgb(255, 217, 0);
+}
+#categoriaInputID{
+    width: 3em;
+}
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(0, 0, 106);
+    background-color: rgb(175, 175, 175);
 }
 #Container{   
     

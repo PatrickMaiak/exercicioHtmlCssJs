@@ -25,7 +25,7 @@ namespace CrudDeProduto.Controllers
 
         // GET: api/Categorias
         [HttpGet]
-        [Authorize(Roles = "funcionario")]
+        [Authorize(Roles = "funcionario, root")]
         public async Task<ActionResult<IEnumerable<Categoria>>> GetCategoria()
         {
             return await _context.Categoria.ToListAsync();
@@ -34,8 +34,10 @@ namespace CrudDeProduto.Controllers
 
 
 
+
+
         [HttpGet("api/[controller]/categoria{Id}")]
-        [Authorize(Roles = "funcionario, gerente")]
+        [Authorize(Roles = "funcionario, gerente, root")]
         public async Task<ActionResult<IEnumerable<TodoProduto>>> GetProdutosDaCategoria(int Id)
         {
             List<TodoProduto> todoProdutos = new List<TodoProduto>();
@@ -61,7 +63,7 @@ namespace CrudDeProduto.Controllers
 
         // GET: api/Categorias/5s
         [HttpGet("{id}")]
-        [Authorize(Roles = "funcionario, gerente")]
+        [Authorize(Roles = "funcionario, gerente, root")]
         public async Task<ActionResult<Categoria>> GetCategoria(int id)
         {
             var categoria = await _context.Categoria.FindAsync(id);
@@ -77,7 +79,7 @@ namespace CrudDeProduto.Controllers
         // PUT: api/Categorias/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        [Authorize(Roles = "gerente")]
+        [Authorize(Roles = "gerente, root")]
         public async Task<IActionResult> PutCategoria(int id, Categoria categoria)
         {
             if (id != categoria.Id)
@@ -109,7 +111,7 @@ namespace CrudDeProduto.Controllers
         // POST: api/Categorias
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        [Authorize(Roles = "funcionario")]
+        [Authorize(Roles = "funcionario, root")]
         public async Task<ActionResult<Categoria>> PostCategoria(Categoria categoria)
         {
             _context.Categoria.Add(categoria);
@@ -120,7 +122,7 @@ namespace CrudDeProduto.Controllers
 
         // DELETE: api/Categorias/5
         [HttpDelete("{id}")]
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin, root")]
         public async Task<IActionResult> DeleteCategoria(int id)
         {
             var categoria = await _context.Categoria.FindAsync(id);
