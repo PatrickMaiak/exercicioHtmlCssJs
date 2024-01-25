@@ -1,4 +1,5 @@
-var login;
+const token = localStorage.getItem('token');
+
 async function Login() {
     let loginUsername = document.getElementById('username').value;
     let loginPassword = document.getElementById('password').value;
@@ -74,7 +75,7 @@ async function preencherCategorias() {
         // Preencha as opções com as categorias obtidas
         categorias.forEach(categoria => {
             const option = document.createElement('option');
-            option.value = JSON.stringify({ id: categoria.id, descricao: categoria.descricao });
+            option.value = categoria.id
             option.textContent = categoria.descricao;
 
             selectCategoria.appendChild(option);
@@ -172,22 +173,21 @@ function editProdutoField(id) {
  async function editProduto() {
      var aparecer = document.getElementById('editProduto')
      
+    let idDOLink = document.getElementById('produtoInputID').value
+
+    //  let objProdutoEditId = 
+    //  let objProdutoEditDescricao = 
  
-     let objProdutoEditId = document.getElementById('produtoInputID').value;
-     let objProdutoEditDescricao = document.getElementById('produtoInput').value;
- 
-     let objProdutoEditValor = document.getElementById('valorInput').value;
-     let objProdutoEditCategoria = document.getElementById('categoriaInput').value;
+    //  let objProdutoEditValor = 
+    //  let objProdutoEditCategoria = 
 
      aparecer.classList.replace('AparecerEdit', 'SumirEdit')
  
      objProdutoEdit = {
-         id: objProdutoEditId,
-         produto: objProdutoEditDescricao,
-         valor: objProdutoEditValor,
-         categoria:{
-             id:objProdutoEditCategoria
-         }
+         id: document.getElementById('produtoInputID').value,
+         produto: document.getElementById('produtoInput').value,
+         valor: document.getElementById('valorInput').value,
+         categoria:{id:document.getElementById('categoriaInput').value}
      }
      var token = localStorage.getItem('token');
  
@@ -200,14 +200,13 @@ function editProdutoField(id) {
          body: JSON.stringify(objProdutoEdit)
      }
  
-     await fetch(`https://localhost:7291/api/TodoProdutos/${objProdutoEditId}`, options);
+     await fetch(`https://localhost:7291/api/TodoProdutos/${idDOLink}`, options);
  
      GetCategoria();
  }
  
 
 async function GetCategoria() {
-    
     linha = ''
     tabela = document.getElementById('CategoriaTb')
     linha = document.createElement('tr')
@@ -300,7 +299,7 @@ async function GetTodoProduto() {
     
     var token = localStorage.getItem('token');
 
-    console.log(token)
+    
     await fetch('https://localhost:7291/api/TodoProdutos',
     {
         method:"get",
@@ -374,10 +373,6 @@ async function GetTodoProduto() {
 
             tabela.appendChild(linha);
 
-
-
-            console.log(item.descricao);
-            console.log(item.id);
         });
     })
  
@@ -450,59 +445,47 @@ async function GetUsuario(){
 //--------------------------------------------------------
 
 async function PostCategoria() {
-    let categoriaInputValor = document.getElementById('categoriaInput').value;
-    let objCategoria = {
-        descricao: categoriaInputValor
+    // let categoriaInputValor = document.getElementById('categoriaInput').value;
+    const objCategoria = {
+        descricao: document.getElementById('PostCategoriainpu').value
     }
+    console.log(objCategoria)
     const token = localStorage.getItem('token');
     await fetch('https://localhost:7291/api/Categorias',
     {
         method:"post",
-        headers:{'Authorization': 'Bearer ' + token,
-                 'Content-Type': 'application/json'
-                },
-        body: JSON.stringify(objCategoria)
+        headers:{
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(objCategoria)
     }
     
     )
    
-   // GetCategoria();
+GetCategoria();
     
 }
 
 async function PostTodoProdutos() {
-
-    let ProdutoInputValor = document.getElementById('ProdutoInput').value;
-    let ValorProdutoValor = document.getElementById('ValorProdutoInput').value;
-    let CategoriaDescricaoValor = document.getElementById('ProdutoCategoriaInput').value;
-    alert(ProdutoInputValor)
-    alert(ValorProdutoValor)
-    alert(CategoriaDescricaoValor)
-    
-    let objTodoProduto = {
-        produto: ProdutoInputValor,
-        valor: ValorProdutoValor,
-        Categoria:{
-            id: CategoriaDescricaoValor
-        }
-
+   
+    const objTodoProduto = {
+        produto : document.getElementById('ProdutoInputPost').value,
+        valor : document.getElementById('ValorProdutoInput').value,
+        Categoria:{id : document.getElementById('categoriaIdInputChaveEstrangeira').value}
     }
-    alert(objTodoProduto)
-    console.log(objTodoProduto)
-    const token = localStorage.getItem('token');
+
     await fetch('https://localhost:7291/api/TodoProdutos',
     {
-        method:"post",
+        method:"POST",
         headers:{'Authorization': 'Bearer ' + token,
                  'Content-Type': 'application/json'
                 },
-        body: JSON.stringify(objTodoProduto)
-        
-        
+        body: JSON.stringify(objTodoProduto)       
     }
     
     )
-    GetTodoProduto();
+    await GetTodoProduto();
     
 }
 
@@ -526,8 +509,9 @@ async function PostUsuario() {
     }
     
     )
+
    
-    GetUsuario();
+     GetUsuario();
     
 }
 

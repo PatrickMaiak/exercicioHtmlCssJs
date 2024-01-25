@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API com fetch</title>
     <link rel="stylesheet" href="estilos.css">
-    <script defer src="script.js"></script>
-</head>
+    <script src="./script.js" type="text/javascript" defer></script></head>
 <body>
 
 <div id="Titulo">
@@ -94,10 +93,10 @@
         </div>
 
 
-        <form>
-            <input id="categoriaInput" type="text" placeholder="CATEGORIA">   
+        
+            <input id="PostCategoriainpu" type="text" placeholder="CATEGORIA">   
             <button onclick="PostCategoria()">Postar</button>
-        </form>
+        
                 
     </div>  
 
@@ -119,12 +118,14 @@
             <button onclick="GetTodoProduto()">carregar</button>
         </div>
         
-        <form>
-            <input id="ProdutoInput" type="text" placeholder="PRODUTO">
+       
+            <input id="ProdutoInputPost" type="text" placeholder="PRODUTO">
             <input id="ValorProdutoInput" type="number" placeholder="VALOR">
-            <input id="ProdutoCategoriaInput" type="number" placeholder="CATEGORIA">
+
+            <input id="categoriaIdInputChaveEstrangeira" placeholder="categoria id">
+           
             <button onclick="PostTodoProdutos()">Postar</button>
-        </form>
+        
             
 
     </div>
