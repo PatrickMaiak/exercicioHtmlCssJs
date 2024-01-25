@@ -69,10 +69,10 @@ async function preencherCategorias() {
    
         const categorias = await response.json();
 
-        // Limpe as opções existentes
+        
         selectCategoria.innerHTML = '<option value=""></option>';
 
-        // Preencha as opções com as categorias obtidas
+        
         categorias.forEach(categoria => {
             const option = document.createElement('option');
             option.value = categoria.id
@@ -107,7 +107,6 @@ async function deleteProduto(id){
 
     GetTodoProduto();
 }
-
 async function deleteUser(id) {
     var token = localStorage.getItem('token');
     const options = {
@@ -170,25 +169,30 @@ function editProdutoField(id) {
      preencherCategorias();
  
  }
+
+
+
+//------------nao consegui resover o bug a baixo ele não esta atualizando a tabela de produtos-----
+
+//---------DIFICULDADES-----------------
+
+//--------------ELE ESTA ENVIANDO ATUALIZADO POREM A CATEGORIA ESTA INDO COMO NULL------
+
+
+
  async function editProduto() {
-     var aparecer = document.getElementById('editProduto')
+    var aparecer = document.getElementById('editProduto')
      
-    let idDOLink = document.getElementById('produtoInputID').value
+    let idDOLink = document.getElementById('IdentificadorDeIdDeProdutoCategoria').value
 
-    //  let objProdutoEditId = 
-    //  let objProdutoEditDescricao = 
- 
-    //  let objProdutoEditValor = 
-    //  let objProdutoEditCategoria = 
-
-     aparecer.classList.replace('AparecerEdit', 'SumirEdit')
- 
      objProdutoEdit = {
          id: document.getElementById('produtoInputID').value,
          produto: document.getElementById('produtoInput').value,
          valor: document.getElementById('valorInput').value,
-         categoria:{id:document.getElementById('categoriaInput').value}
+         categoria:{id: idDOLink}
      }
+
+
      var token = localStorage.getItem('token');
  
      const options = {
@@ -201,8 +205,10 @@ function editProdutoField(id) {
      }
  
      await fetch(`https://localhost:7291/api/TodoProdutos/${idDOLink}`, options);
- 
-     GetCategoria();
+
+     aparecer.classList.replace('AparecerEdit', 'SumirEdit')
+
+     //GetCategoria();
  }
  
 
@@ -288,7 +294,6 @@ async function GetCategoria() {
     })
 
 }
-
 async function GetTodoProduto() {
     
 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mkDSzWPwdLE0xjPbIdfPPcwQ6ojEp30bQteXOeIOmnw=",
+  "Hash": "AE6XCA04ZIsYfJniDqLq+/OWAAen6CwQTObEcdtvnA4=",
   "Source": "CrudDeProduto",
   "BasePath": "_content/CrudDeProduto",
   "Mode": "Default",
@@ -9,10 +9,10 @@
   "DiscoveryPatterns": [],
   "Assets": [
     {
-      "Identity": "C:\\Users\\patrick.kremer\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
+      "Identity": "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
       "SourceId": "Microsoft.AspNetCore.Components.QuickGrid",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\patrick.kremer\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\",
       "BasePath": "_content/Microsoft.AspNetCore.Components.QuickGrid",
       "RelativePath": "Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css",
       "AssetKind": "All",
@@ -25,13 +25,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\patrick.kremer\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\Microsoft.AspNetCore.Components.QuickGrid.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\patrick.kremer\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\QuickGrid.razor.js",
+      "Identity": "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\QuickGrid.razor.js",
       "SourceId": "Microsoft.AspNetCore.Components.QuickGrid",
       "SourceType": "Package",
-      "ContentRoot": "C:\\Users\\patrick.kremer\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\",
+      "ContentRoot": "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\",
       "BasePath": "_content/Microsoft.AspNetCore.Components.QuickGrid",
       "RelativePath": "QuickGrid.razor.js",
       "AssetKind": "All",
@@ -44,13 +44,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\patrick.kremer\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\QuickGrid.razor.js"
+      "OriginalItemSpec": "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.1\\staticwebassets\\QuickGrid.razor.js"
     },
     {
-      "Identity": "C:\\Users\\patrick.kremer\\Desktop\\tabela\\Api Front e Back\\APICrudDeProdutos\\CrudDeProduto\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CrudDeProduto.styles.css",
+      "Identity": "C:\\Users\\User\\Desktop\\Nova pasta (2)\\Api Front e Back\\APICrudDeProdutos\\CrudDeProduto\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CrudDeProduto.styles.css",
       "SourceId": "CrudDeProduto",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\patrick.kremer\\Desktop\\tabela\\Api Front e Back\\APICrudDeProdutos\\CrudDeProduto\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\User\\Desktop\\Nova pasta (2)\\Api Front e Back\\APICrudDeProdutos\\CrudDeProduto\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/CrudDeProduto",
       "RelativePath": "CrudDeProduto.styles.css",
       "AssetKind": "All",
@@ -63,7 +63,7 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\patrick.kremer\\Desktop\\tabela\\Api Front e Back\\APICrudDeProdutos\\CrudDeProduto\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CrudDeProduto.styles.css"
+      "OriginalItemSpec": "C:\\Users\\User\\Desktop\\Nova pasta (2)\\Api Front e Back\\APICrudDeProdutos\\CrudDeProduto\\obj\\Debug\\net8.0\\scopedcss\\bundle\\CrudDeProduto.styles.css"
     }
   ]
 }
