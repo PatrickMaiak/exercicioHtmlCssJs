@@ -1,4 +1,6 @@
-﻿namespace CrudDeProduto.Models
+﻿using CrudDeProduto.Models;
+
+namespace CrudDeProduto.Models
 {
     public class Categoria
     {

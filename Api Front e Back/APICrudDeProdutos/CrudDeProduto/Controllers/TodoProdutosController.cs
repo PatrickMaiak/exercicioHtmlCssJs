@@ -24,7 +24,7 @@ namespace CrudDeProduto.Controllers
 
         // GET: api/TodoProdutos
         [HttpGet]
-        [Authorize(Roles = "funcionario, gerente")]
+        [Authorize(Roles = "funcionario, gerente, root")]
         public async Task<ActionResult<IEnumerable<TodoProduto>>> GetTodoProduto()
         {
             List<TodoProduto> todoProdutos = new List<TodoProduto>();
@@ -43,7 +43,7 @@ namespace CrudDeProduto.Controllers
 
         // GET: api/TodoProdutos/5
         [HttpGet("{id}")]
-        [Authorize(Roles = "funcionario, gerente")]
+        [Authorize(Roles = "funcionario, gerente, root")]
         public async Task<ActionResult<TodoProduto>> GetTodoProduto(int id)
         {
             var todoProduto = await _context.TodoProduto.FindAsync(id);
@@ -57,7 +57,7 @@ namespace CrudDeProduto.Controllers
         }
 
         [HttpGet("api/[controller]/categoria{id}")]
-        [Authorize(Roles = "funcionario, gerente")]
+        [Authorize(Roles = "funcionario, gerente, root")]
         public async Task<ActionResult<IEnumerable<TodoProduto>>> GetProdutosDaCategoria(int id)
         {
             List<TodoProduto> todoProdutos = await _context.TodoProduto.ToListAsync();
@@ -76,7 +76,7 @@ namespace CrudDeProduto.Controllers
         }
 
         [HttpGet("pages")]
-        [Authorize(Roles = "funcionario, gerente")]
+        [Authorize(Roles = "funcionario, gerente, root")]
         public async Task<ActionResult<IEnumerable<TodoProduto>>> GetPageProdutos(
              [FromQuery] int numeroDePaginas = 0,
              [FromQuery] int tamanhoDaPagina = 2
@@ -89,7 +89,7 @@ namespace CrudDeProduto.Controllers
 
         //api/produtos/descricao?nome=cola
         [HttpGet("/api/[controller]/descricao")]
-        [Authorize(Roles = "funcionario, gerente")]
+        [Authorize(Roles = "funcionario, gerente, root")]
         public async Task<ActionResult<IEnumerable<TodoProduto>>> GetNameTodoProduto([FromQuery]string nome)
         {
             List<TodoProduto> produtobyname = await _context.TodoProduto.ToListAsync();
@@ -108,7 +108,7 @@ namespace CrudDeProduto.Controllers
         // PUT: api/TodoProdutos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        [Authorize(Roles = "gerente")]
+        [Authorize(Roles = "gerente, root")]
         public async Task<IActionResult> PutTodoProduto(int id, TodoProduto todoProduto)
         {
             if (id != todoProduto.Id)
@@ -140,11 +140,11 @@ namespace CrudDeProduto.Controllers
         // POST: api/TodoProdutos
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        [Authorize(Roles = "funcionario")]
+        [Authorize(Roles = "funcionario, root")]
         public async Task<ActionResult<TodoProduto>> PostTodoProduto(TodoProduto todoProduto)
         {
-            todoProduto.Categoria = await _context.Categoria.FirstOrDefaultAsync(ct => ct.Id == todoProduto.Categoria.Id);
-            todoProduto.Categoria.Id = todoProduto.Categoria.Id;
+            //todoProduto.Categoria = await _context.Categoria.FirstOrDefaultAsync(ct => ct.Id == todoProduto.Categoria.Id);
+           
 
             _context.TodoProduto.Add(todoProduto);
 
@@ -156,7 +156,7 @@ namespace CrudDeProduto.Controllers
 
         // DELETE: api/TodoProdutos/5
         [HttpDelete("{id}")]
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin, root")]
         public async Task<IActionResult> DeleteTodoProduto(int id)
         {
             var todoProduto = await _context.TodoProduto.FindAsync(id);

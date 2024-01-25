@@ -23,8 +23,8 @@
 
 <div class="SumirCadastro"  id="cadastro">
     <h1>Cadastro</h1>
-    <input id="username" type="text" placeholder="USERNAME" >
-    <input id="password" type="text" placeholder="PASSWORD" >
+    <input id="cadastroUsername" type="text" placeholder="USERNAME" >
+    <input id="cadastroPassword" type="text" placeholder="PASSWORD" >
     <select id="role" type="" placeholder="ROLE" >
         <option value=""></option>
         <option value="funcionario">funcionario</option>
@@ -32,7 +32,22 @@
         <option value="admin">admin</option>
         <option value="root">root</option>
     </select>
-    <button onclick="Cadastro()">Cadastrar</button>
+    <button onclick="PostUsuario()">Cadastrar</button>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Role</th>
+                    <th id="botaotabela"><button id="listarUSer" onclick="GetUsuario()">listar</button></th>
+                </tr>
+            </thead>       
+            <tbody id="UserTb">
+
+            </tbody>
+        </table>
+    </div>
+
 </div>
 </div>
 
@@ -61,9 +76,21 @@
         <div class="SumirEdit" id="edit">
             <h2>EDITE AQUI</h2>
             <input id="categoriaInputID" disabled="true" >
-            <input id="categoriaInputDESCRICAO">
+            <input id="categoriaInputDESCRICAO" placeholder="descrição">
            
             <button onclick="editCategoria()">Editar</button>
+        </div>
+
+        <div class="SumirEdit" id="editProduto">
+            <h2>EDITE AQUI</h2>
+            <input id="produtoInputID" disabled="true" >
+            <input id="produtoInput" placeholder="produto">
+            <input id="valorInput" placeholder="valor">
+            <select id="categoriaInput" placeholder="categoria id">
+                <option value=""></option>
+            </select>
+           
+            <button onclick="editProduto()">Editar</button>
         </div>
 
 
@@ -84,19 +111,19 @@
                         <th>Valor</th>
                         <th>Categoria</th>
                         <th id="botaotabela">Botao</th>
-                <tbody>
+                <tbody id="produtoTb">
 
                 </tbody>
             </table>
 
-            <button onclick="GetProduto()">carregar</button>
+            <button onclick="GetTodoProduto()">carregar</button>
         </div>
         
         <form>
             <input id="ProdutoInput" type="text" placeholder="PRODUTO">
-            <input id="ValorProdutoInput" type="text" placeholder="VALOR">
-            <input id="ProdutoCategoriaInput" type="text" placeholder="CATEGORIA">
-            <button onclick="PostProduto()">Postar</button>
+            <input id="ValorProdutoInput" type="number" placeholder="VALOR">
+            <input id="ProdutoCategoriaInput" type="number" placeholder="CATEGORIA">
+            <button onclick="PostTodoProdutos()">Postar</button>
         </form>
             
 
