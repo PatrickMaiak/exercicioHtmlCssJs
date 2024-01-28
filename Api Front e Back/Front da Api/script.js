@@ -166,7 +166,7 @@ function editProdutoField(id) {
      aparecer.classList.replace('SumirEdit', 'AparecerEdit')
      let objProdutoEditId = document.getElementById('produtoInputID');
      objProdutoEditId.value = id
-     preencherCategorias();
+     //preencherCategorias();
  
  }
 
@@ -180,20 +180,24 @@ function editProdutoField(id) {
 
 
 
- async function editProduto() {
-    var aparecer = document.getElementById('editProduto')
+ async function editarProduto() {
+    
      
     let idDOLink = document.getElementById('IdentificadorDeIdDeProdutoCategoria').value
 
-     objProdutoEdit = {
-         id: document.getElementById('produtoInputID').value,
-         produto: document.getElementById('produtoInput').value,
-         valor: document.getElementById('valorInput').value,
-         categoria:{id: idDOLink}
-     }
+    objProdutoEdit = {
+        Id: parseInt(document.getElementById('produtoInputID').value),
+        ProdutosDto: document.getElementById('produtoInput').value,
+        ValorDto: parseInt(document.getElementById('valorInput').value),
+        CategoriaIdDto: parseInt(idDOLink)
+    }
 
-
-     var token = localStorage.getItem('token');
+    console.log(objProdutoEdit)
+    console.log(objProdutoEdit.Id)
+    console.log(objProdutoEdit.ProdutosDto)
+    console.log(objProdutoEdit.ValorDto)
+    console.log(objProdutoEdit.CategoriaIdDto)
+    // var token = localStorage.getItem('token');
  
      const options = {
          method: 'put',
@@ -205,10 +209,11 @@ function editProdutoField(id) {
      }
  
      await fetch(`https://localhost:7291/api/TodoProdutos/${idDOLink}`, options);
-
+    
+     var aparecer = document.getElementById('editProduto')
      aparecer.classList.replace('AparecerEdit', 'SumirEdit')
 
-     //GetCategoria();
+     GetCategoria();
  }
  
 
@@ -335,8 +340,17 @@ async function GetTodoProduto() {
             linha.appendChild(colunaValor)
 
             var colunaCategoria = document.createElement('td')
-            colunaCategoria.textContent = `${item.categoria.descricao}`
+            if (item && item.categoria) {
+                colunaCategoria.textContent = item.categoria.descricao;
+            }
+            //colunaCategoria.textContent = item.categoria.descricao 
+            else {
+                colunaCategoria.textContent = 'Categoria não disponível';
+            }
             linha.appendChild(colunaCategoria)
+
+            
+           
 
             var colunaFuncoes = document.createElement('td')
             var button = document.createElement('button')

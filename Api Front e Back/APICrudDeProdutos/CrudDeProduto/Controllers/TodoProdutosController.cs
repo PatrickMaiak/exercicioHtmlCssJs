@@ -109,14 +109,32 @@ namespace CrudDeProduto.Controllers
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         [Authorize(Roles = "gerente, root")]
-        public async Task<IActionResult> PutTodoProduto(int id, TodoProduto todoProduto)
+        public async Task<IActionResult> PutTodoProduto(int id, ProdutoDtoPasta.ProdutoDto produtodto)
         {
-            if (id != todoProduto.Id)
+            var categorias = _context.Categoria.FirstOrDefaultAsync(ct => ct.Id == produtodto.CategoriaIdDto);
+
+            var todoproduto = await _context.TodoProduto.FirstOrDefaultAsync(p => p.Id == produtodto.Id);
+            
+            if (categorias == null)
+            {
+                return NotFound("Categoria não encontrada");
+            }
+
+
+            todoproduto.Id = produtodto.Id;
+            todoproduto.Produto = produtodto.ProdutosDto;
+            todoproduto.Valor = produtodto.ValorDto;
+            todoproduto.CategoriaId =  categorias.Id;
+           
+            todoproduto.Categoria = await categorias;
+
+
+            if (id != todoproduto.Id)
             {
                 return BadRequest();
             }
 
-            _context.Entry(todoProduto).State = EntityState.Modified;
+            _context.Entry(todoproduto).State = EntityState.Modified;
 
             try
             {
@@ -143,7 +161,7 @@ namespace CrudDeProduto.Controllers
         [Authorize(Roles = "funcionario, root")]
         public async Task<ActionResult<TodoProduto>> PostTodoProduto(TodoProduto todoProduto)
         {
-            //todoProduto.Categoria = await _context.Categoria.FirstOrDefaultAsync(ct => ct.Id == todoProduto.Categoria.Id);
+            todoProduto.Categoria = await _context.Categoria.FirstOrDefaultAsync(ct => ct.Id == todoProduto.Categoria.Id);
            
 
             _context.TodoProduto.Add(todoProduto);
